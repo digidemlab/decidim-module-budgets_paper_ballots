@@ -1,0 +1,43 @@
+---
+en:
+  activemodel:
+    attributes:
+      paper_ballot_result:
+        decidim_project_id: Project
+        votes: Votes
+  decidim:
+    budgets:
+      actions:
+        import_results: Import paper ballots
+      admin:
+        budgets:
+          index:
+            paper_ballots: Paper ballots
+        imports:
+          help:
+            paper_ballot_results: "The import document should contain the following columns: id (with the project's id) and new_paper_votes (with the number of new votes for the project that should be imported). You can simply reuse an export of all the projects and add a column named 'new_paper_votes'."
+          label:
+            paper_ballot_results: Import paper ballots
+          resources:
+            paper_ballot_results:
+              one: paper ballot result
+              other: paper ballot results
+          title:
+            paper_ballot_results: Import results from paper ballots
+        models:
+          paper_ballot_result: Paper ballot result
+        projects:
+          index:
+            paper_ballots: Paper ballots
+        paper_ballots_imports:
+          new:
+            create: Import paper ballots
+            title: Import paper ballots
+      admin_log:
+        paper_ballot_result:
+          create: "%{user_name} imported paper ballot results in the %{space_name} space"
+      models:
+        paper_ballot_result:
+          fields:
+            id: ID
+            votes: Votes
