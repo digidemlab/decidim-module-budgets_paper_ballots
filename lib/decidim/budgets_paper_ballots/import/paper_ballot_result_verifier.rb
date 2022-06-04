@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
  module Decidim
-   module Budgets
+   module BudgetsPaperBallots
      module Import
        # This class is responsible for verifying the data for paper ballots import
        class PaperBallotResultVerifier < Decidim::Admin::Import::Verifier
          protected
 
          def required_headers
-           %w(id votes)
+           %w(id paper_ballots_to_import)
          end
 
          # Check if prepared resource is valid
