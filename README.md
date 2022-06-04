@@ -10,11 +10,11 @@ The number of paper votes for each project can then be seen in the admin panel a
 
 ## Usage
 
-The imported votes need to be provided for each project in the Budget, using a CSV or Excel files with the following columns: *id* (of the projects), *paper_votes* (number of votes to be imported), or a JSON file with an array of objects with the same keys.
+The imported votes need to be provided for each project in the Budget, using a CSV or Excel files with the following columns: *id* (of the projects), *paper_ballots_to_import* (number of votes to be imported), or a JSON file with an array of objects with the same keys.
 
 ![File structure](screenshots/file-structure.png)
 
-An easy way to fill in such a file is to export the list of projects from the admin panel and to add a column called *paper_votes*. The remaining columns will not be read but can be left in the file.
+An easy way to fill in such a file is to export the list of projects from the admin panel and to add a column called *paper_ballots_to_import*. The remaining columns will not be read but can be left in the file.
 
 ...
 

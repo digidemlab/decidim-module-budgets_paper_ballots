@@ -2,7 +2,7 @@
 
  require "spec_helper"
 
- describe Decidim::Budgets::Import::PaperBallotResultCreator do
+ describe Decidim::BudgetsPaperBallots::Import::PaperBallotResultCreator do
    subject { described_class.new(data, context) }
 
    let(:project) { create(:project) }
@@ -10,7 +10,7 @@
    let(:data) do
      {
        id: project.id,
-       votes: votes,
+       paper_ballots_to_import: votes,
      }
    end
    let(:organization) { create(:organization, available_locales: [:en]) }
@@ -29,7 +29,7 @@
 
    describe "#resource_klass" do
      it "returns the correct class" do
-       expect(described_class.resource_klass).to be(Decidim::Budgets::PaperBallotResult)
+       expect(described_class.resource_klass).to be(Decidim::BudgetsPaperBallots::PaperBallotResult)
      end
    end
 
@@ -37,7 +37,7 @@
      it "returns the attributes hash" do
        expect(subject.resource_attributes).to eq(
          id: data[:id],
-         votes: data[:votes]
+         paper_ballots_to_import: data[:paper_ballots_to_import]
        )
      end
    end
@@ -46,9 +46,9 @@
      it "creates a paper ballot result" do
        record = subject.produce
 
-       expect(record).to be_a(Decidim::Budgets::PaperBallotResult)
+       expect(record).to be_a(Decidim::BudgetsPaperBallots::PaperBallotResult)
        expect(record.decidim_project_id).to eq(data[:id])
-       expect(record.votes).to eq(data[:votes])
+       expect(record.votes).to eq(data[:paper_ballots_to_import])
      end
    end
 
