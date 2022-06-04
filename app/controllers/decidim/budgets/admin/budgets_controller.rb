@@ -83,7 +83,7 @@ module Decidim
         end
 
         def paper_ballot_results
-          @paper_ballot_results ||= PaperBallotResult.joins(:project).where(decidim_budgets_projects: { decidim_budgets_budget_id: budgets })
+          @paper_ballot_results ||= Decidim::BudgetsPaperBallots::PaperBallotResult.joins(:project).where(decidim_budgets_projects: { decidim_budgets_budget_id: budgets })
         end
 
         def pending_orders
