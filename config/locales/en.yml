@@ -41,3 +41,9 @@ en:
           fields:
             id: ID
             votes: Votes
+    admin:
+      imports:
+        creators:
+          paperballotresultcreator: Import paper ballots
+        help:
+          paperballotresultcreator: "The import document should contain the following columns: 'project_id' (with the project's id) and 'paper_ballots_to_import' (with the number of new votes for the project that should be imported). You can simply reuse an export of all the projects, rename the 'id' column to 'project_id' and add a column named 'paper_ballots_to_import'."

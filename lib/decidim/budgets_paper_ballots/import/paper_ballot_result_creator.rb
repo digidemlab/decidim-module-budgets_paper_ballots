@@ -11,12 +11,6 @@ module Decidim
           Decidim::BudgetsPaperBallots::PaperBallotResult
         end
 
-        # Returns a verifier class to be used to verify the correctness of the
-        # import data.
-        def self.verifier_klass
-          Decidim::BudgetsPaperBallots::Import::PaperBallotResultVerifier
-        end
-
         # Produces a paper ballot result from parsed data
         #
         # Returns a paper ballot result
@@ -43,7 +37,7 @@ module Decidim
         end
 
         def id
-          data[:id].to_i
+          data[:project_id].to_i
         end
       end
     end

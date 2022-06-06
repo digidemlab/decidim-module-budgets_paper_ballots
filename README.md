@@ -16,7 +16,11 @@ The imported votes need to be provided for each project in the Budget, using a C
 
 An easy way to fill in such a file is to export the list of projects from the admin panel and to add a column called *paper_ballots_to_import*. The remaining columns will not be read but can be left in the file.
 
-...
+### Specific instructions for v0.25
+
+To use the module with Decidim v0.25, you need to rename the *id* column to *project_id*. Otherwise, the importer won't be able to read the project ids.
+
+This workaround is no longer necessary starting from Decidim v0.26.
 
 ## Installation
 

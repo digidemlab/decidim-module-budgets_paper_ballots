@@ -5,9 +5,7 @@
         <%= t(".title") %>
       </div>
       <div class="flex--cc flex-gap--1">
-        <% current_component.manifest.import_manifests.each do |import_manifest| %>
-            <%= link_to import_manifest.message(:label, self), admin_imports_path(current_component, name: import_manifest.name), class: "button tiny button--title" %>
-        <% end %>
+        <%= link_to t("actions.import_results", scope: "decidim.budgets", name: t("models.paper_ballot_result", scope: "decidim.budgets")), admin_imports_path(current_component, name: "paper_ballot_result"), class: "button tiny button--title" %>
         <% if allowed_to? :export, :budget %>
           <%= export_dropdown %>
         <% end %>
