@@ -26,7 +26,11 @@ module Decidim
 
         # Saves the paper ballot result
         def finish!
-          super # resource.save!
+          Decidim.traceability.perform_action!(:import, self.class.resource_klass, context[:current_user],
+                                               visibility: 'admin-only') do
+            resource.save!
+            resource
+          end
         end
 
         private
