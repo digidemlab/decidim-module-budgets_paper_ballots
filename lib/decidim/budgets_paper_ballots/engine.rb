@@ -22,10 +22,12 @@ module Decidim
         Decidim.component_registry.find(:budgets).tap do |component|
           component.imports :paper_ballot_result do |imports|
             imports.messages do |msg|
-              msg.set(:resource_name) { |count: 1| I18n.t("decidim.budgets.admin.imports.resources.paper_ballot_results", count: count) }
-              msg.set(:title) { I18n.t("decidim.budgets.admin.imports.title.paper_ballot_results") }
-              msg.set(:label) { I18n.t("decidim.budgets.admin.imports.label.paper_ballot_results") }
-              msg.set(:help) { I18n.t("decidim.budgets.admin.imports.help.paper_ballot_results") }
+              msg.set(:resource_name) do |count: 1|
+                I18n.t("decidim.budgets_paper_ballots.admin.imports.resources.paper_ballot_results", count: count)
+              end
+              msg.set(:title) { I18n.t("decidim.budgets_paper_ballots.admin.imports.title.paper_ballot_results") }
+              msg.set(:label) { I18n.t("decidim.budgets_paper_ballots.admin.imports.label.paper_ballot_results") }
+              msg.set(:help) { I18n.t("decidim.budgets_paper_ballots.admin.imports.help.paper_ballot_results") }
             end
 
             imports.creator Decidim::BudgetsPaperBallots::Import::PaperBallotResultCreator
@@ -34,9 +36,9 @@ module Decidim
       end
 
       initializer "budgets_paper_ballots.register_resources" do
-         Decidim.register_resource(:paper_ballot_result) do |resource|
-           resource.model_class_name = "Decidim::BudgetsPaperBallots::PaperBallotResult"
-         end
+        Decidim.register_resource(:paper_ballot_result) do |resource|
+          resource.model_class_name = "Decidim::BudgetsPaperBallots::PaperBallotResult"
+        end
       end
     end
   end
