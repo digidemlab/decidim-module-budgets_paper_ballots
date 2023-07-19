@@ -6,7 +6,10 @@ module Decidim
       extend ActiveSupport::Concern
 
       included do
-        has_many :paper_ballot_results, foreign_key: "decidim_project_id", class_name: "Decidim::BudgetsPaperBallots::PaperBallotResult"
+        has_many :paper_ballot_results,
+                 foreign_key: "decidim_project_id",
+                 class_name: "Decidim::BudgetsPaperBallots::PaperBallotResult",
+                 dependent: :destroy
       end
 
       # Public: Returns the number of paper votes for a specific project
@@ -16,7 +19,7 @@ module Decidim
 
       # Public: Returns the number of times a specific project has been selected through both online and paper votes.
       def total_votes
-        confirmed_orders_count() + paper_ballots()
+        confirmed_orders_count + paper_ballots
       end
     end
   end
