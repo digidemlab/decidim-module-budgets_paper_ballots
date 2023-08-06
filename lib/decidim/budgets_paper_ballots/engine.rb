@@ -34,9 +34,9 @@ module Decidim
       end
 
       initializer "budgets_paper_ballots.register_resources" do
-         Decidim.register_resource(:paper_ballot_result) do |resource|
-           resource.model_class_name = "Decidim::BudgetsPaperBallots::PaperBallotResult"
-         end
+        Decidim.register_resource(:paper_ballot_result) do |resource|
+          resource.model_class_name = "Decidim::BudgetsPaperBallots::PaperBallotResult"
+        end
       end
     end
   end

@@ -6,7 +6,7 @@ module Decidim
       # This class is responsible for creating the imported paper ballot results
       # and must be included in budgets component's import manifest.
       class PaperBallotResultCreator < Decidim::Admin::Import::Creator
-        # Retuns the resource class to be created with the provided data.
+        # Returns the resource class to be created with the provided data.
         def self.resource_klass
           Decidim::BudgetsPaperBallots::PaperBallotResult
         end
@@ -17,16 +17,9 @@ module Decidim
           Decidim::BudgetsPaperBallots::Import::PaperBallotResultVerifier
         end
 
-        # Produces a paper ballot result from parsed data
-        #
         # Returns a paper ballot result
         def produce
           resource
-        end
-
-        # Saves the paper ballot result
-        def finish!
-          super # resource.save!
         end
 
         private

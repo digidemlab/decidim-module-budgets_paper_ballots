@@ -105,7 +105,6 @@ module Decidim
         def paper_ballots_count
           paper_ballot_results.sum(:votes)
         end
-
       end
     end
   end
