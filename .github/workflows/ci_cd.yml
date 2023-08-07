@@ -1,14 +1,10 @@
 name: "[CI/CD]"
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
+on: [push]
 
 env:
   NODE_VERSION: 16.9.1
-  RUBY_VERSION: 2.7.5
+  RUBY_VERSION: 3.0.2
 
 jobs:
   lints:
