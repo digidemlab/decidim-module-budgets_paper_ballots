@@ -1,0 +1,43 @@
+---
+sv:
+  activemodel:
+    attributes:
+      paper_ballot_result:
+        decidim_project_id: Project
+        votes: Röster
+  decidim:
+    budgets:
+      actions:
+        import_results: Importera röstsedlar
+      admin:
+        budgets:
+          index:
+            paper_ballots: Röstsedlar
+        imports:
+          help:
+            paper_ballot_results: "Dokumentet ska innehålla följande kolumner: 'id' (med projektets id) och 'paper_ballots_to_import' (med antalet nya röster som ska importeras för projektet). Enklast är att använda en export av alla projekten och lägga till en kolumn 'paper_ballots_to_import'."
+          label:
+            paper_ballot_results: Importera röstsedlar
+          resources:
+            paper_ballot_results:
+              one: röstsedelns resultat
+              other: röstsedlarnas resultat
+          title:
+            paper_ballot_results: Importera resultat från röstsedlar
+        models:
+          paper_ballot_result: Röstsedlarnas resultat
+        projects:
+          index:
+            paper_ballots: Röstsedlar
+        paper_ballots_imports:
+          new:
+            create: Importera röstsedlar
+            title: Importera röstsedlar
+      admin_log:
+        paper_ballot_result:
+          create: "%{user_name} importerade resultat från röstsedlar i %{space_name}"
+      models:
+        paper_ballot_result:
+          fields:
+            id: ID
+            votes: Röster

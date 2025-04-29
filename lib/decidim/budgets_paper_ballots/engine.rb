@@ -14,6 +14,8 @@ module Decidim
 
       config.to_prepare do
         Decidim::Budgets::ProjectVotesCountCell.prepend(ProjectVotesCountCellOverride)
+        Decidim::Budgets::Admin::BudgetsController.include(BudgetsControllerOverride)
+        Decidim::Budgets::Admin::ProjectsController.include(ProjectsControllerOverride)
         Decidim::Budgets::Project.include(ProjectOverride)
         Decidim::Budgets::ProjectSerializer.prepend(ProjectSerializerOverride)
       end
