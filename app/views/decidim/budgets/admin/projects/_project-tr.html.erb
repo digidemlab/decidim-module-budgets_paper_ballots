@@ -21,10 +21,7 @@
     <%= td_resource_scope_for(project.scope) %>
   <% end %>
   <td>
-    <%= project.confirmed_orders_count %>
-  </td>
-  <td>
-    <%= project.paper_ballots %>
+    <%= project.total_votes %> (<%= project.confirmed_orders_count %>/<%= project.paper_ballots %>)
   </td>
   <td>
     <% if project.selected? %>
