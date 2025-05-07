@@ -13,6 +13,7 @@ module Decidim
       isolate_namespace Decidim::BudgetsPaperBallots
 
       config.to_prepare do
+        Decidim::Budgets::ProjectMetadataCell.prepend(ProjectMetadataCellOverride)
         Decidim::Budgets::ProjectVotesCountCell.prepend(ProjectVotesCountCellOverride)
         Decidim::Budgets::Admin::BudgetsController.include(BudgetsControllerOverride)
         Decidim::Budgets::Admin::ProjectsController.include(ProjectsControllerOverride)
