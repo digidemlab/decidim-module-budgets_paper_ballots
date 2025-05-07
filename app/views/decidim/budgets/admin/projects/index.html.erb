@@ -23,6 +23,7 @@
             <%= th_scope_sort_link %>
           <% end %>
           <th><%= sort_link(query, :confirmed_orders_count, t("index.confirmed_orders_count")) %></th>
+          <th><%= t ".paper_ballots" %></th>
           <th><%= sort_link(query, :selected, t(".selected")) %></th>
           <% if maps_enabled? && Decidim::Map.available?(:static, :geocoding) %>
             <th><%= t("models.project.fields.map", scope: "decidim.budgets") %></th>
