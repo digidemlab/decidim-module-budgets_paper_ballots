@@ -8,34 +8,34 @@ sv:
   decidim:
     budgets:
       actions:
-        import_results: Importera röstsedlar
+        import_results: Importera pappersröster
       admin:
         budgets:
           index:
-            paper_ballots: Röstsedlar
+            paper_ballots: Pappersröster
         imports:
           help:
-            paper_ballot_results: "Dokumentet ska innehålla följande kolumner: 'id' (med projektets id) och 'paper_ballots_to_import' (med antalet nya röster som ska importeras för projektet). Enklast är att använda en export av alla projekten och lägga till en kolumn 'paper_ballots_to_import'."
+            paper_ballot_results: "Dokumentet ska innehålla följande kolumner: 'id' (med projektets id) och 'paper_ballots_to_import' (med antalet nya röster som ska importeras för projektet). Skapa ett nytt dokument, eller gör en export av alla projekt och lägg till kolumnen 'paper_ballots_to_import'."
           label:
-            paper_ballot_results: Importera röstsedlar
+            paper_ballot_results: Importera pappersröster
           resources:
             paper_ballot_results:
-              one: röstsedelns resultat
-              other: röstsedlarnas resultat
+              one: pappersröstens resultat
+              other: pappersrösternas resultat
           title:
-            paper_ballot_results: Importera resultat från röstsedlar
+            paper_ballot_results: Importera resultat från pappersröster
         models:
-          paper_ballot_result: Röstsedlarnas resultat
+          paper_ballot_result: Pappersrösternas resultat
         projects:
           index:
-            paper_ballots: Röstsedlar
+            paper_ballots: Pappersröster
         paper_ballots_imports:
           new:
-            create: Importera röstsedlar
-            title: Importera röstsedlar
+            create: Importera pappersröster
+            title: Importera pappersröster
       admin_log:
         paper_ballot_result:
-          create: "%{user_name} importerade resultat från röstsedlar i %{space_name}"
+          create: "%{user_name} importerade resultat från pappersröster i %{space_name}"
       models:
         paper_ballot_result:
           fields:
